@@ -6,8 +6,8 @@ import { UserRepository } from "../repositories/userRepository";
 export class UserService {
     constructor(private userRepository: UserRepository) {}
 
-    createUser(name: string, email: string, age: number): Promise<User>{
-        const user: User = UserFactory.createUser(name, email, age);
+    createUser(type: string, name: string, email: string, age: number): Promise<User>{
+        const user: User = UserFactory.createUser(type, name, email, age);
         return this.userRepository.createUser(user);
     }
 

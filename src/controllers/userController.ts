@@ -7,8 +7,8 @@ const userService = new UserService(userRepository);
 
 export const createUser = async (req: Request, res: Response) =>{
     try {
-        const {name, email, age} = req.body;
-        const user = await userService.createUser(name, email, age);
+        const {type, name, email, age} = req.body;
+        const user = await userService.createUser(type, name, email, age);
         res.status(201).json({message: 'user created succesfully', user});
     } catch (error) {
         res.status(500).json({message:'Failed to created user'});
